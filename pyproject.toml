@@ -1,17 +1,23 @@
 [project]
 name = "snake-il-vs-rl"
 version = "0.1.0"
-description = "Add your description here"
+description = "A project where a machine learns to play Snake and compares it's score to yours"
 readme = "README.md"
 authors = [
     { name = "Darwin Deschenes", email = "ddeschenes02@icloud.com" }
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 dependencies = []
-
-[project.scripts]
-snake-il-vs-rl = "snake_il_vs_rl:main"
 
 [build-system]
 requires = ["uv_build>=0.12.7,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "snake"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.5",
+]
